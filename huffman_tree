@@ -1,0 +1,31 @@
+// Huffman Tree
+digraph {
+	rankdir=TB
+	root [label=1.00]
+	root -> rootL [label=1]
+	rootL [label=0.40]
+	rootL -> rootLL [label=1]
+	rootLL [label=0.15]
+	rootLL -> rootLLL [label=1]
+	rootLLL [label="0.05
+W"]
+	rootLL -> rootLLR [label=0]
+	rootLLR [label="0.10
+K"]
+	rootL -> rootLR [label=0]
+	rootLR [label="0.25
+A"]
+	root -> rootR [label=0]
+	rootR [label=0.60]
+	rootR -> rootRL [label=1]
+	rootRL [label=0.30]
+	rootRL -> rootRLL [label=1]
+	rootRLL [label="0.15
+B"]
+	rootRL -> rootRLR [label=0]
+	rootRLR [label="0.15
+F"]
+	rootR -> rootRR [label=0]
+	rootRR [label="0.30
+E"]
+}
