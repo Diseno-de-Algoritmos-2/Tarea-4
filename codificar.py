@@ -8,7 +8,9 @@ from graphviz import Digraph
 # TEXTO Y ALFABETO
 # ------------------------------------------------
 
-TEXT = "AABEEWFEBKAEFBKEAFEA"
+#TEXT = "AABEEWFEBKAEFBKEAFEA"
+TEXT = "DVJFVNDFVBKHDSJFVDBHKFJHFLJDKFBVLJDFBVKHF"
+
 
 def obtain_alphabet_probabilities(text):
 
@@ -228,6 +230,9 @@ entropy = entropy_worst_case(probabilities)
 # 4. Codificación de un texto con los códigos de Shannon-Fano y Huffman.
 
 NEW_TEXT = "BEAWE"
+NEW_TEXT = "DVJFV"
+
+
 
 cod_shannon_faro = codificar_shannon_fano(NEW_TEXT, codificacion_sf)
 cod_huffman = codificar_huffman(NEW_TEXT, codificacion_huffman)

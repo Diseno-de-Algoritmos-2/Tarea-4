@@ -3,29 +3,49 @@ digraph {
 	rankdir=TB
 	root [label=1.00]
 	root -> rootL [label=1]
-	rootL [label=0.40]
+	rootL [label=0.39]
 	rootL -> rootLL [label=1]
-	rootLL [label=0.15]
-	rootLL -> rootLLL [label=1]
-	rootLLL [label="0.05
-W"]
-	rootLL -> rootLLR [label=0]
-	rootLLR [label="0.10
-K"]
+	rootLL [label="0.20
+F"]
 	rootL -> rootLR [label=0]
-	rootLR [label="0.25
-A"]
+	rootLR [label=0.20]
+	rootLR -> rootLRL [label=1]
+	rootLRL [label="0.10
+K"]
+	rootLR -> rootLRR [label=0]
+	rootLRR [label=0.10]
+	rootLRR -> rootLRRL [label=1]
+	rootLRRL [label="0.05
+L"]
+	rootLRR -> rootLRRR [label=0]
+	rootLRRR [label=0.05]
+	rootLRRR -> rootLRRRL [label=1]
+	rootLRRRL [label="0.02
+N"]
+	rootLRRR -> rootLRRRR [label=0]
+	rootLRRRR [label="0.02
+S"]
 	root -> rootR [label=0]
-	rootR [label=0.60]
+	rootR [label=0.61]
 	rootR -> rootRL [label=1]
-	rootRL [label=0.30]
+	rootRL [label=0.27]
 	rootRL -> rootRLL [label=1]
-	rootRLL [label="0.15
-B"]
+	rootRLL [label="0.12
+J"]
 	rootRL -> rootRLR [label=0]
 	rootRLR [label="0.15
-F"]
+D"]
 	rootR -> rootRR [label=0]
-	rootRR [label="0.30
-E"]
+	rootRR [label=0.34]
+	rootRR -> rootRRL [label=1]
+	rootRRL [label="0.15
+V"]
+	rootRR -> rootRRR [label=0]
+	rootRRR [label=0.20]
+	rootRRR -> rootRRRL [label=1]
+	rootRRRL [label="0.10
+B"]
+	rootRRR -> rootRRRR [label=0]
+	rootRRRR [label="0.10
+H"]
 }
