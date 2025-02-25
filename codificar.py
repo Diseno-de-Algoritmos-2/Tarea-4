@@ -8,8 +8,9 @@ from graphviz import Digraph
 # TEXTO Y ALFABETO
 # ------------------------------------------------
 
-#TEXT = "AABEEWFEBKAEFBKEAFEA"
-TEXT = "DVJFVNDFVBKHDSJFVDBHKFJHFLJDKFBVLJDFBVKHF"
+# Read the text from input.txt
+with open('input.txt', 'r') as file:
+    TEXT = file.read().strip()
 
 
 def obtain_alphabet_probabilities(text):
@@ -211,37 +212,58 @@ def plot_huffman_tree(huffman_tree):
 # PRUEBAS
 # ------------------------------------------------
 
-# 1. Probabilidades del alfabeto.
+with open('output.txt', 'w') as output_file:
+    output_file.write("Texto a codificar:\n")
+    output_file.write(TEXT + "\n\n")
 
-probabilities = obtain_alphabet_probabilities(TEXT)
-probabilities = sort_probabilities(probabilities)
+    # 1. Probabilidades del alfabeto.
+    probabilities = obtain_alphabet_probabilities(TEXT)
+    probabilities = sort_probabilities(probabilities)
 
-# 2. Codificación de Shannon-Fano y Huffman.
-codificacion_sf = shannon_fano(probabilities.copy())
-print(f"La codificación de Shannon-Fano es: {codificacion_sf}")
+    # 2. Codificación de Shannon-Fano y Huffman.
+    codificacion_sf = shannon_fano(probabilities.copy())
+    output_file.write("La codificación de Shannon-Fano es:\n")
+    for key in codificacion_sf:
+        output_file.write(f"'{key}': {codificacion_sf[key]}\n")
+    output_file.write("\n")
 
-huffman_tree = get_huffman_tree(probabilities.copy())
-codificacion_huffman = huffman(huffman_tree)
-print(f"La codificación de Huffman es: {codificacion_huffman}")
+    huffman_tree = get_huffman_tree(probabilities.copy())
+    codificacion_huffman = huffman(huffman_tree)
+    output_file.write("La codificación de Huffman es:\n")
+    for key in codificacion_huffman:
+        output_file.write(f"'{key}': {codificacion_huffman[key]}\n")
+    output_file.write("\n")
 
-# 3. Entropía
-entropy = entropy_worst_case(probabilities)
+    # 3. Entropía
+    entropy = entropy_worst_case(probabilities)
 
-# 4. Codificación de un texto con los códigos de Shannon-Fano y Huffman.
+    # Numero de bits promedio y necesarios para guardar el texto con Shannon-Fano
+    bits_promedio_sf = abs(sum([len(codificacion_sf[symbol]) * prob for prob, symbol in probabilities]))
+    bits_total_sf = len(codificar_shannon_fano(TEXT, codificacion_sf))
 
-NEW_TEXT = "BEAWE"
-NEW_TEXT = "DVJFV"
+    # Numero de bits promedio y necesarios para guardar el texto con Huffman
+    bits_promedio_huffman = abs(sum([len(codificacion_huffman[symbol]) * prob for prob, symbol in probabilities]))
+    bits_total_huffman = len(codificar_huffman(TEXT, codificacion_huffman))
 
+    # 5. Informar del número de bits promedio, la entropía en el peor de los casos
+    # y el número total de bits que se necesitarían para guardar el texto dado.
+    output_file.write(f"Para el texto dado:\n")
+    output_file.write(f"  - La entropía en el peor de los casos es: {entropy:.2f} bits.\n")
+    output_file.write(f"  - El número promedio de bits necesarios para guardar el texto con Shannon-Fano es: {bits_promedio_sf:.2f} bits.\n")
+    output_file.write(f"  - El número promedio de bits necesarios para guardar el texto con Huffman es: {bits_promedio_huffman:.2f} bits.\n")
+    output_file.write("\n")
+    output_file.write(f"  - El número total de bits necesarios para guardar el texto con Shannon-Fano es: {bits_total_sf} bits.\n")
+    output_file.write(f"  - El número total de bits necesarios para guardar el texto con Huffman es: {bits_total_huffman} bits.\n")
+    output_file.write("\n")
 
+    if bits_total_sf < bits_total_huffman:
+        output_file.write(f"La codificación de Shannon-Fano es más eficiente que la de Huffman en este caso.\n")
+    else:
+        output_file.write(f"La codificación de Huffman es más eficiente que la de Shannon-Fano en este caso.\n")
+    output_file.write("\n")
+    
 
-cod_shannon_faro = codificar_shannon_fano(NEW_TEXT, codificacion_sf)
-cod_huffman = codificar_huffman(NEW_TEXT, codificacion_huffman)
-
-print(f"Para el texto '{NEW_TEXT}', la codificación de Shannon-Fano es: {cod_shannon_faro}")
-print(f"Para el texto '{NEW_TEXT}', la codificación de Huffman es: {cod_huffman}")
-
-# 5. Decodificación de un texto con los códigos de Shannon-Fano y Huffman.
-
+print("Los resultados han sido escritos en output.txt")
 
 # 6. Visualización del árbol de Huffman.
 plot_huffman_tree(huffman_tree)

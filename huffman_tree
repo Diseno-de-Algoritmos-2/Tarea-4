@@ -3,49 +3,114 @@ digraph {
 	rankdir=TB
 	root [label=1.00]
 	root -> rootL [label=1]
-	rootL [label=0.39]
+	rootL [label=0.40]
 	rootL -> rootLL [label=1]
-	rootLL [label="0.20
-F"]
+	rootLL [label="0.19
+y"]
 	rootL -> rootLR [label=0]
-	rootLR [label=0.20]
+	rootLR [label=0.21]
 	rootLR -> rootLRL [label=1]
-	rootLRL [label="0.10
-K"]
+	rootLRL [label=0.09]
+	rootLRL -> rootLRLL [label=1]
+	rootLRLL [label="0.04
+t"]
+	rootLRL -> rootLRLR [label=0]
+	rootLRLR [label="0.05
+n"]
 	rootLR -> rootLRR [label=0]
-	rootLRR [label=0.10]
+	rootLRR [label=0.12]
 	rootLRR -> rootLRRL [label=1]
-	rootLRRL [label="0.05
-L"]
+	rootLRRL [label=0.06]
+	rootLRRL -> rootLRRLL [label=1]
+	rootLRRLL [label="0.03
+b"]
+	rootLRRL -> rootLRRLR [label=0]
+	rootLRRLR [label="0.03
+s"]
 	rootLRR -> rootLRRR [label=0]
-	rootLRRR [label=0.05]
-	rootLRRR -> rootLRRRL [label=1]
-	rootLRRRL [label="0.02
-N"]
-	rootLRRR -> rootLRRRR [label=0]
-	rootLRRRR [label="0.02
-S"]
+	rootLRRR [label="0.06
+e"]
 	root -> rootR [label=0]
-	rootR [label=0.61]
+	rootR [label=0.60]
 	rootR -> rootRL [label=1]
-	rootRL [label=0.27]
+	rootRL [label=0.28]
 	rootRL -> rootRLL [label=1]
-	rootRLL [label="0.12
-J"]
+	rootRLL [label=0.13]
+	rootRLL -> rootRLLL [label=1]
+	rootRLLL [label="0.06
+l"]
+	rootRLL -> rootRLLR [label=0]
+	rootRLLR [label="0.07
+a"]
 	rootRL -> rootRLR [label=0]
-	rootRLR [label="0.15
-D"]
+	rootRLR [label=0.15]
+	rootRLR -> rootRLRL [label=1]
+	rootRLRL [label=0.07]
+	rootRLRL -> rootRLRLL [label=1]
+	rootRLRLL [label="0.03
+w"]
+	rootRLRL -> rootRLRLR [label=0]
+	rootRLRLR [label=0.04]
+	rootRLRLR -> rootRLRLRL [label=1]
+	rootRLRLRL [label=0.02]
+	rootRLRLRL -> rootRLRLRLL [label=1]
+	rootRLRLRLL [label="0.01
+,"]
+	rootRLRLRL -> rootRLRLRLR [label=0]
+	rootRLRLRLR [label="0.01
+A"]
+	rootRLRLR -> rootRLRLRR [label=0]
+	rootRLRLRR [label="0.02
+c"]
+	rootRLR -> rootRLRR [label=0]
+	rootRLRR [label=0.08]
+	rootRLRR -> rootRLRRL [label=1]
+	rootRLRRL [label=0.04]
+	rootRLRRL -> rootRLRRLL [label=1]
+	rootRLRRLL [label="0.02
+d"]
+	rootRLRRL -> rootRLRRLR [label=0]
+	rootRLRRLR [label="0.02
+f"]
+	rootRLRR -> rootRLRRR [label=0]
+	rootRLRRR [label=0.04]
+	rootRLRRR -> rootRLRRRL [label=1]
+	rootRLRRRL [label=0.02]
+	rootRLRRRL -> rootRLRRRLL [label=1]
+	rootRLRRRLL [label="0.01
+g"]
+	rootRLRRRL -> rootRLRRRLR [label=0]
+	rootRLRRRLR [label="0.01
+k"]
+	rootRLRRR -> rootRLRRRR [label=0]
+	rootRLRRRR [label="0.02
+h"]
 	rootR -> rootRR [label=0]
-	rootRR [label=0.34]
+	rootRR [label=0.33]
 	rootRR -> rootRRL [label=1]
-	rootRRL [label="0.15
-V"]
+	rootRRL [label=0.16]
+	rootRRL -> rootRRLL [label=1]
+	rootRRLL [label=0.08]
+	rootRRLL -> rootRRLLL [label=1]
+	rootRRLLL [label="0.04
+i"]
+	rootRRLL -> rootRRLLR [label=0]
+	rootRRLLR [label=0.04]
+	rootRRLLR -> rootRRLLRL [label=1]
+	rootRRLLRL [label="0.02
+r"]
+	rootRRLLR -> rootRRLLRR [label=0]
+	rootRRLLRR [label=0.02]
+	rootRRLLRR -> rootRRLLRRL [label=1]
+	rootRRLLRRL [label="0.01
+u"]
+	rootRRLLRR -> rootRRLLRRR [label=0]
+	rootRRLLRRR [label="0.01
+v"]
+	rootRRL -> rootRRLR [label=0]
+	rootRRLR [label="0.08
+o"]
 	rootRR -> rootRRR [label=0]
-	rootRRR [label=0.20]
-	rootRRR -> rootRRRL [label=1]
-	rootRRRL [label="0.10
-B"]
-	rootRRR -> rootRRRR [label=0]
-	rootRRRR [label="0.10
-H"]
+	rootRRR [label="0.17
+ "]
 }

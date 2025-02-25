@@ -1,0 +1,63 @@
+Texto a codificar:
+According to all known laws of aviation, there is no way a bee should be able to flyyyyyyyyyyyyyyyyyy
+
+La codificación de Shannon-Fano es:
+'y': 000
+' ': 001
+'o': 0100
+'a': 0101
+'e': 01100
+'l': 01101
+'n': 01110
+'i': 01111
+'t': 10000
+'b': 100010
+'s': 100011
+'w': 100100
+'c': 100101
+'d': 100110
+'f': 100111
+'h': 101000
+'r': 101001
+',': 1010100
+'A': 1010101
+'g': 1010110
+'k': 1010111
+'u': 1011000
+'v': 1011001
+
+La codificación de Huffman es:
+'y': 11
+'t': 1011
+'n': 1010
+'b': 10011
+'s': 10010
+'e': 1000
+'l': 0111
+'a': 0110
+'w': 01011
+',': 0101011
+'A': 0101010
+'c': 010100
+'d': 010011
+'f': 010010
+'g': 0100011
+'k': 0100010
+'h': 010000
+'i': 00111
+'r': 001101
+'u': 0011001
+'v': 0011000
+'o': 0010
+' ': 000
+
+Para el texto dado:
+  - La entropía en el peor de los casos es: 4.52 bits.
+  - El número promedio de bits necesarios para guardar el texto con Shannon-Fano es: 4.45 bits.
+  - El número promedio de bits necesarios para guardar el texto con Huffman es: 3.96 bits.
+
+  - El número total de bits necesarios para guardar el texto con Shannon-Fano es: 449 bits.
+  - El número total de bits necesarios para guardar el texto con Huffman es: 400 bits.
+
+La codificación de Huffman es más eficiente que la de Shannon-Fano en este caso.
+
