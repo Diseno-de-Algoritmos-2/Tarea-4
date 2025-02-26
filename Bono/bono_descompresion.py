@@ -7,7 +7,7 @@ import struct
 
 def decompress_text(input_file, output_file):
     try:
-        print("Iniciando descompresión...")
+        print("\nIniciando descompresión...")
         print(f"Archivo de entrada: {input_file}")
         print(f"Archivo de salida: {output_file}")
         
@@ -16,8 +16,24 @@ def decompress_text(input_file, output_file):
             codes = json.loads(file.readline().decode('utf-8'))
             compressed_data = file.read()
         
-        bit_string = ''.join(format(byte, '08b') for byte in compressed_data)[:-padding]
+        print("\nCodigos Huffman:")
+        for symbol, code in codes.items():
+            print(f"'{symbol}': {code}")
         
+        print("\nDescomprimiendo...")
+        print(f"Bytes: {compressed_data}")
+
+        bit_string = ''
+        for byte in compressed_data:
+            bits = format(byte, '08b')
+            bit_string += bits
+
+        if padding > 0:
+            bit_string = bit_string[:-padding]
+
+
+        print(f"Texto comprimido: {bit_string}")
+
         reverse_codes = {v: k for k, v in codes.items()}
         decoded_text = ""
         temp_code = ""
@@ -27,10 +43,12 @@ def decompress_text(input_file, output_file):
                 decoded_text += reverse_codes[temp_code]
                 temp_code = ""
         
+        print(f"Texto descomprimido: {decoded_text}")
+
         with open(output_file, 'w', encoding='utf-8') as file:
             file.write(decoded_text)
         
-        print(f"Descompresión exitosa. Archivo generado: {output_file}")
+        print(f"Descompresión exitosa. Archivo generado: {output_file}\n")
     except Exception as e:
         print(f"Error en descompresión: {e}")
 
