@@ -127,7 +127,7 @@ La codificación de Huffman es:
 'r': 000000
 
 Para el texto dado:
-  - La entropía en el peor de los casos es: 4.86 bits.
+  - La entropía en el peor de los casos es: 4.86 bits, por lo que se necesitarían 5 bits por símbolo.
   - El número promedio de bits necesarios usando la codificacón de Shannon-Fano es: 4.70 bits.
   - El número promedio de bits necesarios usando la codificacón de Huffman es: 4.25 bits.
 
