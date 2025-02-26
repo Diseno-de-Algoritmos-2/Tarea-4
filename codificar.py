@@ -249,8 +249,8 @@ with open('output.txt', 'w') as output_file:
     # y el número total de bits que se necesitarían para guardar el texto dado.
     output_file.write(f"Para el texto dado:\n")
     output_file.write(f"  - La entropía en el peor de los casos es: {entropy:.2f} bits.\n")
-    output_file.write(f"  - El número promedio de bits necesarios para guardar el texto con Shannon-Fano es: {bits_promedio_sf:.2f} bits.\n")
-    output_file.write(f"  - El número promedio de bits necesarios para guardar el texto con Huffman es: {bits_promedio_huffman:.2f} bits.\n")
+    output_file.write(f"  - El número promedio de bits necesarios usando la codificacón de Shannon-Fano es: {bits_promedio_sf:.2f} bits.\n")
+    output_file.write(f"  - El número promedio de bits necesarios usando la codificacón de Huffman es: {bits_promedio_huffman:.2f} bits.\n")
     output_file.write("\n")
     output_file.write(f"  - El número total de bits necesarios para guardar el texto con Shannon-Fano es: {bits_total_sf} bits.\n")
     output_file.write(f"  - El número total de bits necesarios para guardar el texto con Huffman es: {bits_total_huffman} bits.\n")

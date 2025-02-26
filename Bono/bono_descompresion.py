@@ -20,8 +20,10 @@ def decompress_text(input_file, output_file):
         for symbol, code in codes.items():
             print(f"'{symbol}': {code}")
         
-        print("\nDescomprimiendo...")
+        print("\nDescompresión finalizada.")
+        print()
         print(f"Bytes: {compressed_data}")
+        print()
 
         bit_string = ''
         for byte in compressed_data:
@@ -33,6 +35,7 @@ def decompress_text(input_file, output_file):
 
 
         print(f"Texto comprimido: {bit_string}")
+        print()
 
         reverse_codes = {v: k for k, v in codes.items()}
         decoded_text = ""
@@ -44,6 +47,7 @@ def decompress_text(input_file, output_file):
                 temp_code = ""
         
         print(f"Texto descomprimido: {decoded_text}")
+        print()
 
         with open(output_file, 'w', encoding='utf-8') as file:
             file.write(decoded_text)

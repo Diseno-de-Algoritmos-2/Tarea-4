@@ -51,7 +51,7 @@ def huffman(huffman_tree):
 def compress_text(input_file, output_file):
     try:
         
-        print("\nIniciando compresión...")
+        print("\nIniciando compresión utilizando Huffman...")
         print(f"Archivo de entrada: {input_file}")
 
         with open(input_file, 'r', encoding='utf-8') as file:
@@ -68,10 +68,14 @@ def compress_text(input_file, output_file):
         compressed_text += '0' * padding
         byte_array = bytearray(int(compressed_text[i:i+8], 2) for i in range(0, len(compressed_text), 8))
 
-        print("\nCompresión:")
+        print("\nCompresión finalizada:")
+        print()
         print(f"Texto original: {text}")
+        print()
         print(f"Texto comprimido: {compressed_text}")
+        print()
         print(f"Bytes: {byte_array}")
+        print()
 
 
         with open(output_file, 'wb') as file:

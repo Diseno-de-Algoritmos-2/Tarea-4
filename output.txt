@@ -1,63 +1,75 @@
 Texto a codificar:
-According to all known laws of aviation, there is no way a bee should be able to flyyyyyyyyyyyyyyyyyy
+According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible.
 
-La codificaci髇 de Shannon-Fano es:
-'y': 000
-' ': 001
-'o': 0100
-'a': 0101
-'e': 01100
-'l': 01101
-'n': 01110
-'i': 01111
-'t': 10000
-'b': 100010
-'s': 100011
-'w': 100100
-'c': 100101
-'d': 100110
-'f': 100111
-'h': 101000
-'r': 101001
-',': 1010100
-'A': 1010101
-'g': 1010110
-'k': 1010111
-'u': 1011000
-'v': 1011001
-
-La codificaci髇 de Huffman es:
-'y': 11
-'t': 1011
-'n': 1010
-'b': 10011
-'s': 10010
-'e': 1000
-'l': 0111
-'a': 0110
-'w': 01011
-',': 0101011
-'A': 0101010
-'c': 010100
-'d': 010011
-'f': 010010
-'g': 0100011
-'k': 0100010
-'h': 010000
-'i': 00111
-'r': 001101
-'u': 0011001
-'v': 0011000
-'o': 0010
+La codificaci贸n de Shannon-Fano es:
 ' ': 000
+'e': 0010
+'o': 0011
+'a': 0100
+'t': 0101
+'s': 01100
+'i': 01101
+'l': 01110
+'n': 01111
+'b': 10000
+'f': 100010
+'h': 100011
+'r': 100100
+'w': 100101
+'c': 100110
+'d': 100111
+'u': 101000
+'y': 101001
+'g': 101010
+',': 1010110
+'.': 1010111
+'m': 1011000
+'k': 1011001
+''': 10110100
+'A': 10110101
+'I': 10110110
+'T': 10110111
+'p': 10111000
+'v': 10111001
+
+La codificaci贸n de Huffman es:
+' ': 11
+'i': 1011
+'l': 1010
+'w': 10011
+'f': 10010
+'h': 10001
+'m': 100001
+''': 10000011
+'A': 10000010
+'I': 10000001
+'T': 10000000
+'s': 0111
+'a': 0110
+'b': 01011
+'g': 010101
+'k': 0101001
+'p': 01010001
+'v': 01010000
+'t': 0100
+'o': 0011
+'c': 001011
+'d': 001010
+'u': 001001
+'y': 001000
+'e': 0001
+'n': 00001
+',': 0000011
+'.': 0000010
+'r': 000000
 
 Para el texto dado:
-  - La entrop韆 en el peor de los casos es: 4.52 bits.
-  - El n鷐ero promedio de bits necesarios para guardar el texto con Shannon-Fano es: 4.45 bits.
-  - El n鷐ero promedio de bits necesarios para guardar el texto con Huffman es: 3.96 bits.
+  - La entrop铆a en el peor de los casos es: 4.86 bits.
+  - El n煤mero promedio de bits necesarios usando la codificac贸n de Shannon-Fano es: 4.70 bits.
+  - El n煤mero promedio de bits necesarios usando la codificac贸n de Huffman es: 4.25 bits.
 
-  - El n鷐ero total de bits necesarios para guardar el texto con Shannon-Fano es: 449 bits.
-  - El n鷐ero total de bits necesarios para guardar el texto con Huffman es: 400 bits.
+  - El n煤mero total de bits necesarios para guardar el texto con Shannon-Fano es: 1137 bits.
+  - El n煤mero total de bits necesarios para guardar el texto con Huffman es: 1029 bits.
 
-La codificaci髇 de Huffman es m醩 eficiente que la de Shannon-Fano en este caso.
+La codificaci贸n de Huffman es m谩s eficiente que la de Shannon-Fano en este caso.
 

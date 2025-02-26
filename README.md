@@ -24,12 +24,12 @@ El repositorio contiene los siguientes archivos:
 
 1. **Algoritmos de Solución:**
 
-   - `Codificar.py`: Implementa el algoritmo de los algoritmos de Shannon-Fano y Huffman que permitan comprimir el texto dado.
-   - `huffman_tree.png`: Arbol que muestra como se construyo la codificación de Huffman.
+   - `Codificar.py`: Implementa el algoritmo de los algoritmos de Shannon-Fano y Huffman que permitan comprimir el texto dado y calcular la entropía, el número de bits esperado y el número total de bits que se necesitarían para guardar el texto dado.
+   - `huffman_tree.png`: Arbol que muestra como se construyo la codificación de Huffman, este se genera automáticamente al correr el programa `codificar.py`.
 
 2. **Archivos de Entrada y Salida:**
    - `input.txt`: Contiene el texto que se va a comprimir.
-   - `output.txt`: Contiene el texto orgininal, las condificaciones para cada uno de los algoritmos, la entropía y número promedio de bits.
+   - `output.txt`: Contiene el texto orgininal, las codificaciones para cada uno de los algoritmos, la entropía y número promedio de bits necesarios para guardar el texto con Shannon-Fano y Huffman, y el número total de bits necesarios para guardar el texto con Shannon-Fano y Huffman.
 
 ---
 
@@ -39,10 +39,10 @@ El repositorio contiene los siguientes archivos:
 
 El archivo de entrada debe seguir este formato:
 
-- **N Líneas:** Texto que se va a codificar.
+- El archivo de entrada debe ser un archivo de texto que en una o más lineas contenga el mensaje a comprimir.
   **Ejemplo de archivo de entrada:**
   ```
-  According to all known laws of aviation, there is no way a bee should be able to flyyyyyyyyyyyyyyyyyy
+  According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible.
   ```
 
 ### **Archivo de Salida (`output.txt`)**
@@ -53,118 +53,98 @@ El archivo de salida muestra:
 - La codificación de Shannon-Fano
 - La codificación de Huffman
 - Entropía
-- El número promedio de bits
+- El número promedio de bits necesarios para guardar el texto con Shannon-Fano
+- El número promedio de bits necesarios para guardar el texto con Huffman
+- El número total de bits necesarios para guardar el texto con Shannon-Fano
+- El número total de bits necesarios para guardar el texto con Huffman
 
 **Ejemplo de archivo de salida:**
 
 ```
 Texto a codificar:
-According to all known laws of aviation, there is no way a bee should be able to flyyyyyyyyyyyyyyyyyy
+According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible.
 
 La codificación de Shannon-Fano es:
-'y': 000
-' ': 001
-'o': 0100
-'a': 0101
-'e': 01100
-'l': 01101
-'n': 01110
-'i': 01111
-'t': 10000
-'b': 100010
-'s': 100011
-'w': 100100
-'c': 100101
-'d': 100110
-'f': 100111
-'h': 101000
-'r': 101001
-',': 1010100
-'A': 1010101
-'g': 1010110
-'k': 1010111
-'u': 1011000
-'v': 1011001
+' ': 000
+'e': 0010
+'o': 0011
+'a': 0100
+'t': 0101
+'s': 01100
+'i': 01101
+'l': 01110
+'n': 01111
+'b': 10000
+'f': 100010
+'h': 100011
+'r': 100100
+'w': 100101
+'c': 100110
+'d': 100111
+'u': 101000
+'y': 101001
+'g': 101010
+',': 1010110
+'.': 1010111
+'m': 1011000
+'k': 1011001
+''': 10110100
+'A': 10110101
+'I': 10110110
+'T': 10110111
+'p': 10111000
+'v': 10111001
 
 La codificación de Huffman es:
-'y': 11
-'t': 1011
-'n': 1010
-'b': 10011
-'s': 10010
-'e': 1000
-'l': 0111
+' ': 11
+'i': 1011
+'l': 1010
+'w': 10011
+'f': 10010
+'h': 10001
+'m': 100001
+''': 10000011
+'A': 10000010
+'I': 10000001
+'T': 10000000
+'s': 0111
 'a': 0110
-'w': 01011
-',': 0101011
-'A': 0101010
-'c': 010100
-'d': 010011
-'f': 010010
-'g': 0100011
-'k': 0100010
-'h': 010000
-'i': 00111
-'r': 001101
-'u': 0011001
-'v': 0011000
-'o': 0010
-' ': 000
+'b': 01011
+'g': 010101
+'k': 0101001
+'p': 01010001
+'v': 01010000
+'t': 0100
+'o': 0011
+'c': 001011
+'d': 001010
+'u': 001001
+'y': 001000
+'e': 0001
+'n': 00001
+',': 0000011
+'.': 0000010
+'r': 000000
 
 Para el texto dado:
-  - La entropía en el peor de los casos es: 4.52 bits.
-  - El número promedio de bits necesarios para guardar el texto con Shannon-Fano es: 4.45 bits.
-  - El número promedio de bits necesarios para guardar el texto con Huffman es: 3.96 bits.
+  - La entropía en el peor de los casos es: 4.86 bits.
+  - El número promedio de bits necesarios usando la codificacón de Shannon-Fano es: 4.70 bits.
+  - El número promedio de bits necesarios usando la codificacón de Huffman es: 4.25 bits.
 
-  - El número total de bits necesarios para guardar el texto con Shannon-Fano es: 449 bits.
-  - El número total de bits necesarios para guardar el texto con Huffman es: 400 bits.
+  - El número total de bits necesarios para guardar el texto con Shannon-Fano es: 1137 bits.
+  - El número total de bits necesarios para guardar el texto con Huffman es: 1029 bits.
 
 La codificación de Huffman es más eficiente que la de Shannon-Fano en este caso.
 ```
 
 ---
 
-## **Ejemplo de Ejecución**
-
-### **Entrada (`input.txt`)**
-
-```
-Hola
-```
-
 ### **Comando de Ejecución**
+
+Despues de ubicarse en la raiz del proyecto y haber creado el archivo `input.txt` con el texto a codificar, ejecute el siguiente comando:
 
 ```bash
 python codificar.py
-```
-
-### **Salida (`output.txt`)**
-
-```
-Texto a codificar:
-Hola
-
-La codificación de Shannon-Fano es:
-'H': 00
-'a': 01
-'l': 10
-'o': 11
-
-La codificación de Huffman es:
-'H': 11
-'a': 10
-'l': 01
-'o': 00
-
-Para el texto dado:
-  - La entropía en el peor de los casos es: 2.00 bits.
-  - El número promedio de bits necesarios para guardar el texto con Shannon-Fano es: 2.00 bits.
-  - El número promedio de bits necesarios para guardar el texto con Huffman es: 2.00 bits.
-
-  - El número total de bits necesarios para guardar el texto con Shannon-Fano es: 8 bits.
-  - El número total de bits necesarios para guardar el texto con Huffman es: 8 bits.
-
-La codificación de Huffman es más eficiente que la de Shannon-Fano en este caso.
 ```
 
 ---
@@ -173,7 +153,7 @@ La codificación de Huffman es más eficiente que la de Shannon-Fano en este cas
 
 El bono se encuentra en la carpeta **\Bono** y contiene los siguientes archivos:
 
-- **bono_compresion.py**: Archivo encargado de leer el texto que se desea comprimir, calculas los códigos de Huffman y comprimir el archivo con dicha configuración en .bin.
+- **bono_compresion.py**: Archivo encargado de leer el texto que se desea comprimir, calculas los códigos de Huffman y comprimir el archivo con dicha configuración en formato .bin.
 - **bono_descompresion.py**: Archivo que lee el .bin y descomprime el texto al original.
 - **compressed.bin**: Guarda (i) los códigos de Huffman y (ii) el texto comprimido.
 - **input.txt**: Contiene el texto original que deseamos comprimir.
@@ -181,13 +161,15 @@ El bono se encuentra en la carpeta **\Bono** y contiene los siguientes archivos:
 
 Durante la ejecución de ambos **.py** se observa el proceso.
 
-### **Entrada (`input.txt`)**
+### **Ejemplo de entrada (`input.txt`)**
 
 ```
 Me gusta jugar futbol Sala
 ```
 
 ### **Comando de Ejecución - Comprimir**
+
+Despues de ubicarse en la carpeta **\Bono** y haber creado el archivo `input.txt` con el texto a codificar, ejecute el siguiente comando:
 
 ```bash
 python bono_compresion.py input.txt compressed.bin
@@ -210,7 +192,7 @@ Me gusta jugar futbol Sala
 1. **Entrada**: El archivo input.txt contiene el texto que se desea códificar. Puede ser de la longitud deseada por el usuario.
 
 2. **Algoritmos Implementados**
-   Las codificaciones de Shannon-Fano y Huffman son métodos de compresión que asignan códigos binarios a símbolos basándose en su frecuencia de aparición. Ambos métodos buscan minimizar la longitud promedio del código, pero Huffman generalmente logra una compresión más óptima al construir el árbol de manera que los símbolos más frecuentes tengan códigos más cortos.
+   Las codificaciones de Shannon-Fano y Huffman son métodos de compresión que asignan códigos binarios a símbolos basándose en su frecuencia de aparición. Ambos métodos buscan codificar el archivo de entrada, pero Huffman generalmente logra una compresión más óptima al construir el árbol de tal manera que los símbolos más frecuentes tengan códigos más cortos.
 
    **Shannon-Faro**: Shannon-Fano calcula las longitudes de los códigos usando el logaritmo de las probabilidades y asigna códigos secuencialmente, garantizando que sean únicamente decodificables.
 
@@ -229,9 +211,6 @@ Este proyecto requiere Python 3 y las siguientes librerias:
 - **os, heapq, math, y struct**: Para manejar archivos y calculos sencillos. Esta librerias vienen incluidas con Python 3.
 - **graphviz**: Para la visualización del arbol de Huffman.
 
-  ```bash
-  from graphviz import Digraph
-  ```
 
 ### **Instalación en Windows**
 
@@ -267,7 +246,7 @@ Este proyecto requiere Python 3 y las siguientes librerias:
 
 ## **Ejecución del Programa**
 
-1. Asegúrese de que el archivo `input.txt` esté ubicado en la misma carpeta principal.
+1. Asegúrese de que el archivo `input.txt` esté ubicado en la misma carpeta principal si se desea ejecutar el archivo ```cofificar.py```.
 
 2. Asumiendo que se encuentra en la raiz del proyecto, para ejecutar ambos algoritmos al tiempo, ejecute:
 
